@@ -26,3 +26,32 @@ sudo systemctl enable asterisk
 ---
 sudo asterisk -rvvv
 ---
+
+[6001](endpoint-basic)
+type = wizard
+transport = transport-udp
+endpoint/context = internal
+endpoint/allow = ulaw
+aor/max_contacts = 1
+auth/username = 6001
+auth/password = 6001pass
+
+[6002](endpoint-basic)
+type = wizard
+transport = transport-udp
+endpoint/context = internal
+endpoint/allow = ulaw
+aor/max_contacts = 1
+auth/username = 6002
+auth/password = 6002pass
+
+[transport-udp]
+type = transport
+protocol = udp
+bind = 0.0.0.0
+#include pjsip_wizard.conf
+
+[internal]
+exten => 6001,1,Dial(PJSIP/6001,20)
+exten => 6002,1,Dial(PJSIP/6002,20)
+
