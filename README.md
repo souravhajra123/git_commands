@@ -27,23 +27,23 @@ sudo systemctl enable asterisk
 sudo asterisk -rvvv
 ---
 
-[6001](endpoint-basic)
+[6001](!)
 type = wizard
 transport = transport-udp
-endpoint/context = internal
 endpoint/allow = ulaw
 aor/max_contacts = 1
 auth/username = 6001
 auth/password = 6001pass
+endpoint/context = internal
 
-[6002](endpoint-basic)
+[6002](!)
 type = wizard
 transport = transport-udp
-endpoint/context = internal
 endpoint/allow = ulaw
 aor/max_contacts = 1
 auth/username = 6002
 auth/password = 6002pass
+endpoint/context = internal
 
 [transport-udp]
 type = transport
