@@ -72,3 +72,44 @@ sudo make config
 sudo systemctl start asterisk
 sudo systemctl enable asterisk
 
+[transport-udp]
+type=transport
+protocol=udp
+bind=0.0.0.0
+
+[6001]
+type=endpoint
+context=internal
+disallow=all
+allow=ulaw
+auth=6001-auth
+aors=6001
+
+[6001-auth]
+type=auth
+auth_type=userpass
+username=6001
+password=6001pass
+
+[6001]
+type=aor
+max_contacts=1
+
+[6002]
+type=endpoint
+context=internal
+disallow=all
+allow=ulaw
+auth=6002-auth
+aors=6002
+
+[6002-auth]
+type=auth
+auth_type=userpass
+username=6002
+password=6002pass
+
+[6002]
+type=aor
+max_contacts=1
+
