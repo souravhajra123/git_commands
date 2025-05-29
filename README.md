@@ -1,6 +1,7 @@
 # git_commands
 
 * Install Asterisk
+  
 sudo apt install -y wget build-essential libncurses-dev libssl-dev libxml2-dev uuid-dev libsqlite3-dev
 
 cd /usr/src
