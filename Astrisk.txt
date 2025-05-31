@@ -68,4 +68,5 @@ exten => 6002,1,Dial(PJSIP/6002,20)
 module reload
 pjsip reload
 dialplan reload
+pjsip show endpoints
 ================
